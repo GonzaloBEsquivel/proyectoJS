@@ -1,13 +1,27 @@
-body{
-    font-family: Arial, Helvetica, sans-serif;
-    text-align: center;
-    margin-top: 50px;
-}
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,400;0,700;1,400&display=swap');
 
+* {
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+}
+body{
+    font-family: "Roboto Condensed", serif;
+    text-align: center;
+}
+ul {
+    list-style-type: none;
+}
+a {
+    text-decoration: none;
+}
 h1 {
     background-color: rgb(216, 172, 172);
 }
-
 p{
     color: red;
+}
+img {
+    width: 150px;
 }

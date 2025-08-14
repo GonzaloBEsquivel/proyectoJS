@@ -1,44 +1,85 @@
-console.log('Todo funciona de maravilla!!!');
+let productos = [];
 
-let password = 1234;
+fetch("./js/productos.json")
+    .then(response => response.json())
+    .then(data => {
+        productos = data;
+        cargarProductos(productos)
+    })
 
-let passwordIngresado = prompt('Ingrese su contraseña: ');
-while(password != passwordIngresado) {
-    passwordIngresado = prompt('Contraseña incorrecta, intente de nuevo: ');
+const contenedorProductos = document.querySelector("#contenedor-productos");
+
+let botonesAgregar;
+
+
+function cargarProductos(productosElegidos) {
+    contenedorProductos.innerHTML = "";
+
+    productosElegidos.forEach(producto => {
+        const div = document.createElement("div");
+        div.classList.add("producto");
+        div.innerHTML = `
+            <img class="producto-imagen" src="${producto.imagen}" alt="Imagen producto">
+            <div class="producto-detalles">
+                <h3 class="producto-titulo">${producto.titulo}</h3>
+                <p class="producto-precio">USD${producto.precio}.</p>
+                <button id="${producto.id}" class="producto-agregar">Agregar</button>
+            </div>
+        `
+        contenedorProductos.append(div);
+    })
+    actualizarBotonesAgregar();
+};
+
+let productosEnCarrito;
+
+let productosEnCarritosLS = localStorage.getItem("productos-en-carrito");
+
+if(productosEnCarritosLS) {
+    productosEnCarrito = JSON.parse(productosEnCarritosLS);
+    actualizarNumerito();
+} else {
+    productosEnCarrito = [];
 }
-alert('Ingreso exitoso');
 
-const usuarios = [
-    {nombre: 'Juan', edad: 18, acettaTerminos: true},
-    {nombre: 'Maria', edad: 17, acettaTerminos: false},
-    {nombre: 'Jose', edad: 16, acettaTerminos: false},
-    {nombre: 'Belen', edad: 30, acettaTerminos: true},
-    {nombre: 'Ara', edad: 28, acettaTerminos: true},
-];
-for (let i = 0; i < usuarios.length; i++) {
-    if (usuarios[i].edad >= 18) {
-        console.log(usuarios[i].nombre)
-    }
-    
-}
+function agregarAlCarrito(e) {
 
-//Uso de ?? en comparaciones
-const mensaje = document.getElementById('mensaje');
-const boton = document.getElementById('cambiarDescuento');
+    Toastify({
+        text: "Producto agregado",
+        duration: 1500,
+        close: true,
+        gravity: "top", // `top` or `bottom`
+        position: "right", // `left`, `center` or `right`
+        stopOnFocus: true, // Prevents dismissing of toast on hover
+        style: {
+            background: "linear-gradient(to right, #684747,rgb(172, 132, 132))",
+            borderRadius: '2rem',
+            textTransform: 'uppercase',
+            fontSize: '.75rem',
+        },
+        offset: {
+            x: '1.5rem', // horizontal axis - can be a number or a string indicating unity. eg: '2em'
+            y: '1.5rem' // vertical axis - can be a number or a string indicating unity. eg: '2em'
+        },
+        onClick: function(){} // Callback after click
+    }).showToast();
 
-let descuentoInicial;
+    const idBoton = e.currentTarget.id;
+    const productoAgregado = productos.find(producto => producto.id === idBoton);
 
-const descuentoPredeterminado = 10;
-let descuentoActual = descuentoInicial ?? descuentoPredeterminado;
-mensaje.textContent = `El descuento es de ${descuentoActual}%`;
-
-boton.addEventListener('click', () => {
-    let descuentoIngresado = prompt('Ingrese el descuento solicitado: ');
-    descuentoIngresado = Number(descuentoIngresado);
-    if(descuentoIngresado > 0 && descuentoIngresado < 100){
-        descuentoActual = descuentoIngresado ?? descuentoPredeterminado;
-        mensaje.textContent = `El descuento es de ${descuentoActual}%`;
+    if(productosEnCarrito.some(producto => producto.id === idBoton)) {
+        const index = productosEnCarrito.findIndex( producto => producto.id === idBoton);
+        productosEnCarrito[index].cantidad++;
     } else {
-        alert('Ingrese un descuento valido. Entre 0 y 100');
+        productoAgregado.cantidad = 1;
+        productosEnCarrito.push(productoAgregado);
     }
-})
+    actualizarNumerito();
+
+    localStorage.setItem("productos-en-carrito", JSON.stringify(productosEnCarrito));
+};
+
+function actualizarNumerito() {
+    let nuevoNumerito = productosEnCarrito.reduce((acc, producto) => acc + producto.cantidad, 0);
+    numerito.innerText = nuevoNumerito;
+;}

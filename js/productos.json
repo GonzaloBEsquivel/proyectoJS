@@ -1,0 +1,62 @@
+[
+    {
+        "id": "auricular-01",
+        "titulo": "Auricular Bluetooth",
+        "imagen": "./images/auricularBluetooth.jpg",
+        "categoria":{
+            "id": "auricular",
+            "nombre": "Auricular Bluetooth"
+        },
+        "precio": 50
+    },
+    {
+        "id": "auricular-02",
+        "titulo": "Auricular Vincha",
+        "imagen": "./images/auricularVincha.jpg",
+        "categoria":{
+            "id": "auricular",
+            "nombre": "Auricular Vincha"
+        },
+        "precio": 30
+    },
+    {
+        "id": "celular-01",
+        "titulo": "Iphone",
+        "imagen": "./images/celular.jpg",
+        "categoria":{
+            "id": "celular",
+            "nombre": "Iphone"
+        },
+        "precio": 550
+    },
+    {
+        "id": "impresora-01",
+        "titulo": "Auricular Bluetooth",
+        "imagen": "./images/impresora.jpg",
+        "categoria":{
+            "id": "impresora",
+            "nombre": "Impresora"
+        },
+        "precio": 350
+    },
+    {
+        "id": "notebook-01",
+        "titulo": "Notebook",
+        "imagen": "./images/notebook.jpg",
+        "categoria":{
+            "id": "notebook",
+            "nombre": "Notebook"
+        },
+        "precio": 750
+    },
+    {
+        "id": "teclado-01",
+        "titulo": "Teclado y Mouse",
+        "imagen": "./images/tecladoMouse.jpg",
+        "categoria":{
+            "id": "teclado",
+            "nombre": "Teclado"
+        },
+        "precio": 30
+    }
+]
