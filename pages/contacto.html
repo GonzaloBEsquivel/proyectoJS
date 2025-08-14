@@ -20,20 +20,53 @@
         </header>
         <section>
             <div>
-                <p>Lo ultimo en tecnología en nuestra tienda virtual</p>
-                <img src="../images/auricularBluetooth.jpg" alt="Imagen producto">
-                <img src="../images/auricularVincha.jpg" alt="Imagen producto">
-                <img src="../images/celular.jpg" alt="Imagen producto">
-                <img src="../images/impresora.jpg" alt="Imagen producto">
-                <img src="../images/notebook.jpg" alt="Imagen producto">
-                <img src="../images/tecladoMouse.jpg" alt="Imagen producto">
-            </div>
-            <h2>Nuevo descuento para nuestros usuarios</h2>
-            
-            <h3>Configuracion de descuento</h3>
-            <p id="mensaje">El descuento es del 10%</p>
-        </section>
-        <button id="cambiarDescuento">Cambiar decuento</button>
+                <h2>Comunicate con nosotros para recibir novedades</h2>
+                <form action="" method="get" target="_blank" autocomplete="off">
+                    <fieldset>
+                        <legend>Datos personales</legend>
+                        
+                        <div>
+                            <label for="name">Nombre: </label>
+                            <input id="name" name="name" type="text" placeholder="Nombre y Apellido" required>
+                        </div>
+                        <div>
+                            <label for="email">Email: </label>
+                            <input id="email" name="email" type="email" placeholder="ejemplo@mail.com">
+                        </div>
+                        <div>
+                            <label for="number">Celular: </label>
+                            <input id="number" name="number" type="number" placeholder="Escribe tu numero">
+                        </div>
+                        <div>
+                            <label for="">Género</label><br>
+                            <input type="radio" id="femenino" name="genero" value="femenino">
+                            <label for="femenino">Femenino</label>
+                            <input type="radio" id="masculino" name="genero" value="masculino">
+                            <label for="masculino">Masculino</label>
+                        </div>
+                        <div>
+                            <label for="">Deseo recibir novedades por email</label>
+                            <input type="checkbox" name="" id="">
+                        </div>
+                        <div>
+                            <label for="hora">Horarío de conatacto</label>
+                            <select name="hora" id="hora">
+                                <option value="mañana" selected>Mañana</option>
+                                <option value="tarde">Tarde</option>
+                                <option value="noche">Noche</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="comentario">Comentarios y/o sugerencias</label>
+                            <textarea name="comentario" id="comentario"></textarea>
+                        </div>
+                        <div>
+                            <button type="submit">Enviar</button>
+                            <button type="reset">Borrar datos</button>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>    
     </main>
 </body>
 </html>
