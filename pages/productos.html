@@ -4,34 +4,56 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/style.css">
-    <title>Tienda Virtual</title>
-    <script defer src="../js/main.js"></script> 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <title>Productos</title>
+    <script defer src="../js/main.js"></script>
+    <script defer src="./js/main.js"></script>
+
 </head>
 <body>
     <main>
-        <header>
+        <header class="cabecero">
             <h1 id="titulo">Tienda Virtual</h1>
-            <nav>
-                <ul>
-                    <li><a href="../index.html">Inicio</a></li>
-                    <li><a href="./productos.html">Productos</a></li>
-                    <li><a href="./contacto.html">Contacto</a></li>
+            <nav class="navbar">
+                <ul class="navbar_items">
+                    <li class="navbar_item"><a href="../index.html">Inicio</a></li>
+                    <li class="navbar_item"><a href="./productos.html">Productos</a></li>
+                    <li class="navbar_item"><a href="./contacto.html">Contacto</a></li>
+                    <li class="navbar_itemCarrito"><a href="./carrito.html"><i class="bi bi-cart2"></i><span id="numerito"class="numerito">0<span></a></li>
                 </ul>
             </nav>
         </header>
-        <section>
-            <div>
-                <h2 id="titulo-principal" class="titulo-principal">Todos los productos</h2>
-                <div id="contenedor-productos" class="contenedor-productos">
-                <!--Se carga con JAVA SCRIPT-->
+        <h2 id="titulo-principal1" class="titulo-principal1">Nuestros productos</h2>
+        <section class="container">
+                <aside  class="aside">
+                    <ul  class="menu">
+                        <li>
+                            <button id="todos" class="boton-menu boton-categoria active">Todos los productos</button>
+                        </li>
+                        <li>
+                            <button id="audio" class="boton-menu boton-categoria">Audio</button>
+                        </li>
+                        <li>
+                            <button id="perifericos" class="boton-menu boton-categoria">Periféricos</button>
+                        </li>
+                        <li>
+                            <button id="tecnologia" class="boton-menu boton-categoria">Tecnología</button>
+                        </li>
+                    </ul>
+                </aside>
+                <div>
+
+                    <h2 id="titulo-principal" class="titulo-principal">Todos los productos</h2>
+                    <div id="contenedor-productos" class="contenedor-productos">
+                        <!--Se carga con JAVA SCRIPT-->
+                    </div>
                 </div>
-            </div>
-            <h2>Nuevo descuento para nuestros usuarios</h2>
-            
-            <h3>Configuracion de descuento</h3>
-            <p id="mensaje">El descuento es del 10%</p>
         </section>
-        <button id="cambiarDescuento">Cambiar decuento</button>
     </main>
+    <footer>
+        <p class="texto-footer">© Tienda Virtual 2025 - Todos los derechos reservados.</p>
+    </footer>
+    <script defer src="./js/main.js"></script>
 </body>
 </html>

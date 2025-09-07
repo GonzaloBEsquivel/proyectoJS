@@ -1,62 +1,62 @@
 [
     {
-        "id": "auricular-01",
+        "id": "audio-01",
         "titulo": "Auricular Bluetooth",
-        "imagen": "./images/auricularBluetooth.jpg",
+        "imagen": "../images/audio/auricularBluetooth.jpg",
         "categoria":{
-            "id": "auricular",
-            "nombre": "Auricular Bluetooth"
+            "id": "audio",
+            "nombre": "Audio"
         },
         "precio": 50
     },
     {
-        "id": "auricular-02",
+        "id": "audio-02",
         "titulo": "Auricular Vincha",
-        "imagen": "./images/auricularVincha.jpg",
+        "imagen": "../images/audio/auricularVincha.jpg",
         "categoria":{
-            "id": "auricular",
-            "nombre": "Auricular Vincha"
+            "id": "audio",
+            "nombre": "Audio"
+        },
+        "precio": 30
+    },
+    {
+        "id": "impresora-01",
+        "titulo": "Impresora Multifunción",
+        "imagen": "../images/perifericos/impresora.jpg",
+        "categoria":{
+            "id": "perifericos",
+            "nombre": "Periféricos"
+        },
+        "precio": 350
+    },
+    {
+        "id": "teclado-01",
+        "titulo": "Teclado y Mouse",
+        "imagen": "../images/perifericos/tecladoMouse.jpg",
+        "categoria":{
+            "id": "perifericos",
+            "nombre": "Periféricos"
         },
         "precio": 30
     },
     {
         "id": "celular-01",
-        "titulo": "Iphone",
-        "imagen": "./images/celular.jpg",
+        "titulo": "Iphone X",
+        "imagen": "../images/tecno/celular.jpg",
         "categoria":{
-            "id": "celular",
-            "nombre": "Iphone"
+            "id": "tecnologia",
+            "nombre": "Tecnología"
         },
         "precio": 550
     },
     {
-        "id": "impresora-01",
-        "titulo": "Auricular Bluetooth",
-        "imagen": "./images/impresora.jpg",
-        "categoria":{
-            "id": "impresora",
-            "nombre": "Impresora"
-        },
-        "precio": 350
-    },
-    {
         "id": "notebook-01",
         "titulo": "Notebook",
-        "imagen": "./images/notebook.jpg",
+        "imagen": "../images/tecno/notebook.jpg",
         "categoria":{
-            "id": "notebook",
-            "nombre": "Notebook"
+            "id": "tecnologia",
+            "nombre": "Tecnología"
         },
         "precio": 750
-    },
-    {
-        "id": "teclado-01",
-        "titulo": "Teclado y Mouse",
-        "imagen": "./images/tecladoMouse.jpg",
-        "categoria":{
-            "id": "teclado",
-            "nombre": "Teclado"
-        },
-        "precio": 30
     }
 ]

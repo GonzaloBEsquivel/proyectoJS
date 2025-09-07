@@ -1,6 +1,6 @@
 let productos = [];
 
-fetch("./js/productos.json")
+fetch("../js/productos.json")
     .then(response => response.json())
     .then(data => {
         productos = data;
@@ -8,9 +8,12 @@ fetch("./js/productos.json")
     })
 
 const contenedorProductos = document.querySelector("#contenedor-productos");
+const botonesCategorias = document.querySelectorAll(".boton-categoria");
+const tituloPrincipal = document.querySelector("#titulo-principal");
 
 let botonesAgregar;
 
+const numerito = document.querySelector("#numerito");
 
 function cargarProductos(productosElegidos) {
     contenedorProductos.innerHTML = "";
@@ -22,7 +25,7 @@ function cargarProductos(productosElegidos) {
             <img class="producto-imagen" src="${producto.imagen}" alt="Imagen producto">
             <div class="producto-detalles">
                 <h3 class="producto-titulo">${producto.titulo}</h3>
-                <p class="producto-precio">USD${producto.precio}.</p>
+                <p class="producto-precio">$${producto.precio}.</p>
                 <button id="${producto.id}" class="producto-agregar">Agregar</button>
             </div>
         `
@@ -30,6 +33,34 @@ function cargarProductos(productosElegidos) {
     })
     actualizarBotonesAgregar();
 };
+
+botonesCategorias.forEach(boton => {
+    boton.addEventListener("click", (e) => {
+
+        botonesCategorias.forEach(boton => boton.classList.remove("active"));
+        e.currentTarget.classList.add("active");
+
+        if(e.currentTarget.id != "todos") {
+            const productosCategoria = productos.find(producto => producto.categoria.id === e.currentTarget.id);
+            tituloPrincipal.innerText = productosCategoria.categoria.nombre;
+
+            const productosBoton = productos.filter(producto => producto.categoria.id === e.currentTarget.id);
+            cargarProductos(productosBoton);
+        } else {
+            tituloPrincipal.innerText = "Todos los productos";
+            cargarProductos(productos);
+        }
+    });
+});
+
+function actualizarBotonesAgregar() {
+    botonesAgregar = document.querySelectorAll(".producto-agregar");
+    
+    botonesAgregar.forEach(boton => {
+        boton.addEventListener("click", agregarAlCarrito)
+    })
+};
+
 
 let productosEnCarrito;
 

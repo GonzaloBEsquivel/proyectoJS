@@ -9,6 +9,92 @@
 body{
     font-family: "Roboto Condensed", serif;
     text-align: center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.cabecero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid;
+    height: 100px;
+    margin: 0 20px ;
+}
+.navbar_items {
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    column-gap: 15px;
+}
+.navbar_item a{
+    padding: 10px;
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+    text-transform: uppercase;
+    background-color: rgb(240, 239, 239);
+    border-bottom: 1px solid;
+    font-weight: 700;
+}
+.navbar_item a:hover{
+    background-color: gray;
+    color: white;
+    border-radius: 10px;
+    transition: .5s;
+}
+.bi.bi-cart2 {
+    color: brown;
+    font-size: 30px;
+    margin: 0 0 0 20px;
+}
+.numerito{
+    color: brown;
+    font-size: 20px;
+    margin: 0 20px 0 0;
+}
+.container {
+    border: 1px solid blue;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 30% 70%;
+}
+.aside {
+    border: 1px solid green;
+    margin: 5px;
+}
+.menu {
+    border: 1px solid;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin: 5px;
+    height: 100%;
+}
+.contenedor-productos {
+    border: 1px solid;
+    display: grid;
+    grid-template-columns: repeat(3, 2fr);
+    gap: 1.5rem;
+    margin: 5px;
+}
+.boton-menu {
+    text-align: center;
+    border: none;
+    border-bottom: 1px solid;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    column-gap: .5rem;
+    padding: 1rem;
+    align-items: center;
+    width: 90%;
+    margin-left: 10px;
+}
+.boton-menu:hover {
+    background-color: gray;
+    color: white;
 }
 ul {
     list-style-type: none;
@@ -16,12 +102,9 @@ ul {
 a {
     text-decoration: none;
 }
-h1 {
-    background-color: rgb(216, 172, 172);
-}
-p{
-    color: red;
-}
 img {
     width: 150px;
+}
+footer {
+    border: 1px solid red;
 }
